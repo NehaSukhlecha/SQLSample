@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.sqlsample.activities.SignUpActivity;
+import org.sqlsample.activities.UserinfoActivity;
+import org.sqlsample.model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,6 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(new User(LoginActivity.this).isValidLogin(editText_email.getText().toString().trim(),
+                        editText_password.getText().toString().trim())){
+                    Intent intent = new Intent(LoginActivity.this,UserinfoActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
 
             }
         });

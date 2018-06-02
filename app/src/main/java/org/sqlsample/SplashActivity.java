@@ -5,12 +5,17 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.sqlsample.database.DataBaseHelper;
+
 public class SplashActivity extends AppCompatActivity {
+
+    private DataBaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        db = new DataBaseHelper(SplashActivity.this);
 
         new Handler().postDelayed(new Runnable() {
             @Override

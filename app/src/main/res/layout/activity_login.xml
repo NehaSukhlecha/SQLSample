@@ -22,7 +22,9 @@
            android:maxLines="1"
            android:hint="@string/email"
            android:inputType="textEmailAddress"
-           android:drawableLeft="@drawable/ic_mail" />
+           android:drawableLeft="@drawable/ic_mail" >
+            <requestFocus/>
+       </EditText>
 
        <EditText
            android:id="@+id/editText_password"
@@ -34,7 +36,7 @@
            android:maxLines="1"
            android:inputType="textPassword"
            android:drawableLeft="@drawable/ic_password">
-           <requestFocus/>
+
        </EditText>
 
        <Button
