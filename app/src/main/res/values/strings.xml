@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">SQLSample</string>
+    <string name="hint_email">Enter email here ..</string>
+    <string name="hint_password">Enter password here ..</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="signUp"><![CDATA[<u><font color=#ef9a9a>Sign Up</u>]]></string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="mobile">Mobile</string>
+
 </resources>
