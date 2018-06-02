@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.sqlsample.activities.SignUpActivity;
 import org.sqlsample.activities.UserinfoActivity;
@@ -41,6 +42,9 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,UserinfoActivity.class);
                     startActivity(intent);
                     finish();
+                }else{
+                        Toast.makeText(LoginActivity.this,"Un authorize User !!!",Toast.LENGTH_SHORT).show();
+
                 }
 
 

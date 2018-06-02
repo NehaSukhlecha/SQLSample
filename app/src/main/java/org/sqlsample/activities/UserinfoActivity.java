@@ -1,8 +1,13 @@
 package org.sqlsample.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import org.sqlsample.LoginActivity;
 import org.sqlsample.R;
 import org.sqlsample.adapter.UserAdapter;
 import org.sqlsample.model.User;
@@ -28,6 +33,18 @@ public class UserinfoActivity extends AppCompatActivity {
 
             userAdapter = new UserAdapter(userArrayList, UserinfoActivity.this);
             user_info_list.setAdapter(userAdapter);
+
+
+
+            user_info_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    User user = userArrayList.get(i);
+                    Intent intent = new Intent(UserinfoActivity.this,UserinfoActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
         }catch (Exception e){
             e.printStackTrace();
         }

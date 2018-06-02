@@ -4,13 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
 import org.sqlsample.database.DataBaseHelper;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
-public class User {
+public class User  {
 
     private String id;
     private String first_name;
@@ -19,7 +18,7 @@ public class User {
     private String mobile;
     private String password;
     private Context context;
-    private DataBaseHelper dataBaseHelper;
+    private  DataBaseHelper dataBaseHelper;
 
     public User() {
     }
@@ -82,7 +81,7 @@ public class User {
         this.password = password;
     }
 
-    public long insertUser(ContentValues values) {
+    public  long insertUser(ContentValues values) {
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
         long id = db.insert("User", null, values);
         db.close();
@@ -95,7 +94,10 @@ public class User {
                 .rawQuery("SELECT * From User where email= '"+email+"' And password='"+password+"'",null);
 
         if (cursor.moveToFirst()) {
+
             first_name = cursor.getString(1);
+
+            //save it in shared pref
             cursor.close();
             database.close();
             return true;
